@@ -20,7 +20,7 @@ data = {
     }
 }
 
-def print_depth(data, depth=1):
+def print_depth_for_dict_and_class(data, depth=1):
     if data:
         nested_data = None
         if isinstance(data, Person):
@@ -30,7 +30,7 @@ def print_depth(data, depth=1):
                 nested_data = value
             print(key, depth)
         depth+=1
-        return print_depth(nested_data, depth)
+        return print_depth_for_dict_and_class(nested_data, depth)
     return 0
 
-print_depth(data=data)
+print_depth_for_dict_and_class(data=data)

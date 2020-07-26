@@ -8,11 +8,11 @@ data = {
     }
 }
 
-def print_depth(dictionary, depth=1):
+def print_depth_for_dict(dictionary, depth=1):
     if isinstance(dictionary, dict):
         for item in dictionary.keys():
             print(item, depth)
         depth+=1
-        return print_depth(dictionary[max(dictionary)], depth)
+        return print_depth_for_dict(dictionary[max(dictionary)], depth)
     return 0
-print_depth(dictionary=data)
+print_depth_for_dict(dictionary=data)
